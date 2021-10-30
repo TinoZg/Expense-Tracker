@@ -1,14 +1,22 @@
 const expenseTrackerForm = document.querySelector("form");
+const tableBody = document.querySelector("tbody");
 const items = [];
 
+// Function for adding new items to the table
 const addItemToTable = (item) => {
-  const tableBody = document.querySelector("tbody");
   const newTableRow = document.createElement("tr");
   newTableRow.setAttribute("id", item.id);
   newTableRow.innerHTML = `<td>${item.name}</td>
                            <td>${item.date}</td>
-                          <td>${item.amount}</td>`;
+                           <td>${item.amount}</td>
+                           <td><button class="remove-item">Delete</Button></td>`;
   tableBody.appendChild(newTableRow);
+};
+
+// Function for removing items
+const removeItem = (id) => {
+  // const item = document.getElementById(id);
+  items = items.filter((id) => item.id !== parseInt(id));
 };
 
 expenseTrackerForm.addEventListener("submit", (e) => {
@@ -42,4 +50,16 @@ expenseTrackerForm.addEventListener("submit", (e) => {
 
   // Add item to table
   addItemToTable(item);
+});
+
+tableBody.addEventListener("click", (e) => {
+  // Check if we clicked on delete button (class "remove-item" previously added to delete button)
+  if (e.target.classList.contains("remove-item")) {
+    // Get id of item we want to delete
+    const itemId = e.target.closest("tr").id;
+
+    console.log(typeof itemId);
+    // Delete the item
+    removeItem(itemId);
+  }
 });
