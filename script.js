@@ -1,23 +1,10 @@
 const expenseTrackerForm = document.querySelector("form");
 const tableBody = document.querySelector("tbody");
-const items = [];
-
-// Function for adding new items to the table
-const addItemToTable = (item) => {
-  const newTableRow = document.createElement("tr");
-  newTableRow.setAttribute("id", item.id);
-  newTableRow.innerHTML = `<td>${item.name}</td>
-                           <td>${item.date}</td>
-                           <td>${item.amount}</td>
-                           <td><button class="remove-item">Delete</Button></td>`;
-  tableBody.appendChild(newTableRow);
-};
-
-// Function for removing items
-const removeItem = (id) => {
-  // const item = document.getElementById(id);
-  items = items.filter((id) => item.id !== parseInt(id));
-};
+let items = JSON.parse(localStorage.getItem("items")) || [];
+// If local storage is not empty, render items
+if (localStorage.getItem("items")) {
+  items.map((item) => addItemToTable(item));
+}
 
 expenseTrackerForm.addEventListener("submit", (e) => {
   // Prevent page from reloading
@@ -58,7 +45,6 @@ tableBody.addEventListener("click", (e) => {
     // Get id of item we want to delete
     const itemId = e.target.closest("tr").id;
 
-    console.log(typeof itemId);
     // Delete the item
     removeItem(itemId);
   }
