@@ -11,5 +11,18 @@ const addItemToTable = (item) => {
 
 // Function for removing items
 const removeItem = (id) => {
+  // Remove item from items array
   items = items.filter((item) => item.id !== parseInt(id));
+
+  // Remove item from the DOM
+  document.getElementById(id).remove();
+
+  // If items array is empty, remove everything from local storage
+  if (items.length === 0) {
+    localStorage.clear();
+    return;
+  }
+
+  // Remove item from local storage
+  localStorage.setItem("items", JSON.stringify(items));
 };
