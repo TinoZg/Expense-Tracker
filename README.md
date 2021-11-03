@@ -10,4 +10,4 @@ Simple Expense tracker application. Can be viewed [here](#).
 
 - [x] Basic HTML
 - [x] Core Logic
-- [ ] Styling (Bootstrap)
+- [x] Styling (Bootstrap)

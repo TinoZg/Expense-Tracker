@@ -5,7 +5,7 @@ const addItemToTable = (item) => {
   newTableRow.innerHTML = `<td>${item.name}</td>
                            <td>${item.date}</td>
                            <td>${item.amount}</td>
-                           <td><button class="remove-item">Delete</Button></td>`;
+                           <td><button class="remove-item btn btn-dark">Delete</Button></td>`;
   tableBody.appendChild(newTableRow);
 };
 
