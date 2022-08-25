@@ -7,4 +7,4 @@ Simple Expense tracker application for learning purposes. Can be viewed [here](h
 ## Technical details
 - Simple styling with [Bootstrap 5](https://getbootstrap.com/)
 - Items are stored in local storage
-- `functions.js` file contains helper function for main `script.js` file
+- `functions.js` file contains helper functions for main `script.js` file
