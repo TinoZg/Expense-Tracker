@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Simple Expense tracker application for learning purposes. Can be viewed [here](https://tinozg.github.io/Expense-Tracker/index.html).
+Simple Expense tracker application. Can be viewed [here](https://tinozg.github.io/Expense-Tracker/index.html).
 
 ## Technical details
 - Simple styling with [Bootstrap 5](https://getbootstrap.com/)
